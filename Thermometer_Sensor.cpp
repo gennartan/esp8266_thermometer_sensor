@@ -15,7 +15,7 @@ Thermometer_Sensor::Thermometer_Sensor(int pin, int n_smooth) : pin(pin), n_smoo
 	}
 	if (retry <= 0)
 	{
-		// todo: raise exception
+		throw std::runtime_error("Could not find Thermometer on pin " + std::to_string(pin));
 	}
 
 	char board_uid[32];
